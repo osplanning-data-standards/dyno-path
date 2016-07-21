@@ -35,17 +35,17 @@ File MAY contain the following attributes:
 
 Optional Attributes	| Description										
 ----------			| -------------		
-`pf_iteration`		| ???
-`path_num`			| ???
-`trip_id_num`		| ???
-`trip_id`			| ??? Duplicate?
+`pf_iteration`		| Path-finding iteration.
+`path_num`			| ID within a pathset.
+`trip_id_num`		| Internal to fast-trips. (Numeric version of `trip_id`.)
+`trip_id`			| Transit trip ID for the trip, corresponding to `trip_id` in `GTFS-PLUS`-formatted [`trips.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/trips.md)
 `route_id`			| Transit route short name corresponding to `route_id` variables in GTFS-PLUS-formatted [`route_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md)
-`A_seq` 			| ???
-`B_seq` 			| ???
-`pf_A_time` 		| ???	
-`pf_B_time` 		| ???	
-`pf_linktime min`	| ???
-`pf_waittime min`	| ???
+`A_seq` 			| Stop sequence for the starting node of the link, corresponding to `stop_sequence` in `GTFS-PLUS`-formatted [`stop_times.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stop_times.md)
+`B_seq` 			| Stop sequence for the ending node of the link, corresponding to `stop_sequence` in `GTFS-PLUS`-formatted [`stop_times.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stop_times.md)
+`pf_A_time` 		| The time at the start node when used by the path-finding algorithm.
+`pf_B_time` 		| The time at the end node when used by the path-finding algorithm.
+`pf_linktime min`	| The link time when used by the path-finding algorithm.
+`pf_waittime min`	| The wait time at the start node when used by the path-finding algorithm.
 
 
 bump_iter	bumpstop_boarded	alight_delay_min	new_A_time	new_B_time	new_linktime min	new_waittime min	missed_xfer	sim_cost	chosen	board_time	overcap	overcap_frac	alight_time	iteration
