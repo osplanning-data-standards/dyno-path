@@ -12,18 +12,19 @@ File MUST contain the following attributes:
 Required Attributes	| Description										
 ----------			| -------------		
 `person_id`			| Corresponds to `person_id` field in `dyno-demand`-formated demand
-`trip_list_id_num`	| Corresponds to ??? field in `dyno-demand`-formatted [`trip_list.txt`](https://github.com/osplanning-data-standards/dyno-demand/blob/master/files/trip_list.md)
+`trip_list_id_num`	| Corresponds to line number field in `dyno-demand`-formatted [`trip_list.txt`](https://github.com/osplanning-data-standards/dyno-demand/blob/master/files/trip_list.md) where 1 is the first trip.
 `linknum`			| The integer link/path segment number representing the order that this link takes place in the entire path
-`A_id_num`			| Starting node for link / path segment
-`B_id_num`			| Ending node for link / path segment
-`A_id`				| ???
-`B_id`				| ???
-`mode_num`			| ???
-`mode`
-`linkmode`			| ??? Corresponds to `mode` field in `GTFS-PLUS`-formatted [`route_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md)
-
--					|    Access
--					|    Egress
+`A_id_num`			| Internal to fast-trips. (Numeric version of `A_id`, which could be a `stop_id` and `taz`.)
+`B_id_num`			| Internal to fast-trips. (Numeric version of `B_id`, which could be a `stop_id` or `taz`.)
+`A_id`				| Starting node for link / path segment.  Can be a `stop_id` corresponding to [`stops.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stops.md) or a `taz` corresponding to an access link such as [`walk_access_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/walk_access_ft.md)
+`B_id`				|  Ending node for link / path segment. Can be a `stop_id` corresponding to [`stops.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stops.md) or a `taz` corresponding to an access link such as [`walk_access_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/walk_access_ft.md)
+`mode_num`			| Internal to fast-trips. (Numeric version of `mode`.)
+`mode`       | Supply mode for the link, corresponds to `mode` in `GTFS-PLUS`-formatted [`routes_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md) or an access or egress mode.
+`linkmode`			| One of 
+-					|    access
+-					|    egress
+-					|    transfer
+-					|    transit
 `dist`				| Drive distance in miles between TAZ and lot.
 `cost`				| Float cost in the unit specified by `currency_type` variable in [`fare_attributes_ft.txt`](/files/fare_attributes_ft.md)
 `travel_time`		| Float driving time in minutes between TAZ and lot.
