@@ -6,7 +6,7 @@ Filename: `passenger_paths.csv`
  *  File MUST be a valid CSV file.
  *  The first line of each file MUST contain case-sensitive field names.
  *  Field names MUST NOT contain tabs, carriage returns or new lines.
- 
+
 File MUST contain the following attributes:
 
 Required Attributes	| Description										
@@ -25,8 +25,8 @@ Required Attributes	| Description
 -					|    egress
 -					|    transfer
 -					|    transit
-`dist`				| Drive distance in miles between TAZ and lot.
-`cost`				| Float cost in the unit specified by `currency_type` variable in [`fare_attributes_ft.txt`](/files/fare_attributes_ft.md)
+`dist`				| *this isn't in the file right now* Drive distance in miles between TAZ and lot.
+`cost`				| *this isn't in the file right now* Generalized cost of the link. Float cost in the unit specified by `currency_type` variable in [`fare_attributes_ft.txt`](/files/fare_attributes_ft.md)
 `travel_time`		| Float driving time in minutes between TAZ and lot.
 `start_time`		| HH:MM:SS from midnight.  If blank, it is assumed that this is the base condition and other time of days will override it.
 `end_time`			| HH:MM:SS from midnight.  If blank, it is assumed that this is the base condition and other time of days will override it.
@@ -46,6 +46,18 @@ Optional Attributes	| Description
 `pf_B_time` 		| The time at the end node when used by the path-finding algorithm.
 `pf_linktime min`	| The link time when used by the path-finding algorithm.
 `pf_waittime min`	| The wait time at the start node when used by the path-finding algorithm.
-
-
-bump_iter	bumpstop_boarded	alight_delay_min	new_A_time	new_B_time	new_linktime min	new_waittime min	missed_xfer	sim_cost	chosen	board_time	overcap	overcap_frac	alight_time	iteration
+`bump_iter` |
+`bumpstop_boarded` | 1 means this passenger boarded, 0 means got bumped.
+`alight_delay_min`	| Delay in alight time from the original path-finding understanding of alight time.
+`new_A_time` | Time at start node, adjusted due to dwell delays.
+`new_B_time` | Time at end node, adjusted due to dwell delays.
+`new_linktime min` | Link time in minutes, adjusted due to dwell delays.
+`new_waittime min` | Wait time in minutes at the start node, given the `new_A_time`
+`missed_xfer` | 1 if the transfer is missed. (This happens in `new_waittime` is negative.)
+`sim_cost` | Generalized cost calculated in the assignment/simulation.
+`chosen` | Chosen status for path. -1 if not chosen, -2 if chosen but rejected, otherwise iteration+simulation_iteration/100.
+`board_time` | Time passenger boards a transit vehicle (as opposed to arriving at the start node).
+`overcap`	| Number of passengers overcap for the transit vehicle for this link.
+`overcap_frac` |
+`alight_time`	| Time passenger alights from the transit vehicle.
+`iteration` | Iteration corresponding to this pathset.
