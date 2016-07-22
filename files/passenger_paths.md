@@ -11,7 +11,7 @@ File MUST contain the following attributes:
 
 Required Attributes	| Description										
 ----------			| -------------		
-`person_id`			| Corresponds to `person_id` field in `dyno-demand`-formated demand
+`person_id`			| Corresponds to `person_id` field in `dyno-demand`-formatted demand
 `trip_list_id_num`	| Corresponds to line number field in `dyno-demand`-formatted [`trip_list.txt`](https://github.com/osplanning-data-standards/dyno-demand/blob/master/files/trip_list.md) where 1 is the first trip.  To be replaced when [dyno-demand issue#2](https://github.com/osplanning-data-standards/dyno-demand/issues/2) is resolved.
 `linknum`			  | The integer link/path segment number representing the order that this link takes place in the entire path
 `A_id_num`			| Internal to fast-trips. (Numeric version of `A_id`, which could be a `stop_id` and `taz`.)
