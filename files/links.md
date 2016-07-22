@@ -42,7 +42,7 @@ File MAY contain the following attributes:
 Optional Attributes	| Description										
 ----------			| -------------		
 `pf_iteration`	| Debug. Path-finding iteration.
-`path_num`			| ID within a pathset.
+`pathnum`			| ID within a pathset.
 `trip_id_num`		| Debug. (Numeric version of `trip_id`.)
 `pf_A_time` 		| Debug. The time at the start node when used by the path-finding algorithm.
 `pf_B_time` 		| Debug. The time at the end node when used by the path-finding algorithm.
