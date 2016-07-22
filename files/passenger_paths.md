@@ -1,7 +1,7 @@
 ## Passenger Links
-Filename: `chosen_links.csv`
+Filename: `chosen_links.csv` or `pathset_links.csv`
 
- *  Filename MAY be named `chosen_links.csv`
+ *  Filename MAY be named `chosen_links.csv` or `pathset_links.csv`
  *  File MUST contain a record for each passenger-trip-< link/path segment >
  *  File MUST be a valid CSV file.
  *  The first line of each file MUST contain case-sensitive field names.
