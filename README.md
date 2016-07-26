@@ -1,13 +1,13 @@
 # dyno-path
 Path data standards.  Suitable for assignment output including vehicle and passgenger paths.
 
-**version**: 0.1.0
-**updated**: 20 July 2016
+**version**: 0.1.X
+**updated**: 26 July 2016
 **created**: 20 July 2016  
 **authors**:  
 
  * Lisa Zorn (LMZ LLC)  
- *Elizabeth Sall (UrbanLabs LLC)  
+ * Elizabeth Sall (UrbanLabs LLC)  
  * Brice Nichols (Puget Sound Regional Council)
  * Andisheh Ranjbari (Puget Sound Regional Council)
  * Drew Cooper (San Francisco County Transportation Authority)  
@@ -24,25 +24,26 @@ explicit changes please fork the [git repo][repo] and submit a pull request.
 
 ### Changelog
 
--  `0.1.0`: initial commit; [Technical Memo Documentation](http://fast-trips.mtc.ca.gov/library/T2-NetworkDesign-WorkingCopy-July2015V0.1.pdf)  
+-  To come - still in too much flux
 
 # Specification
 
 dyno-path assignment files consist of required and optional data files that together 
-describe the momvement of people or vehicles through a transportation system.  
+describe the movement of people or vehicles through a transportation system.  
 
 A dyno-path assignment MUST include the following files:
 
 Filename 			| Description										
 ----------			| -------------										
+[`chosen_paths.csv`](/files/paths.md)		| passenger paths that were chosen
+[`chosen_links.csv`](/files/links.md)		| links for chosen paths
 
-
-A dyno-path asignment MAY include the following files:
+A dyno-path assignment MAY include the following files:
 
 Filename 					| Description										
 ----------					| -------------		
-[`passenger_paths.csv`](/files/passenger_paths.md)		| passenger paths
-
+[`pathset_paths.csv`](/files/paths.md)		| path-based information for pathsets
+[`pathset_links.csv`](/files/links.md)		| link-based information for pathsets
 
 
 
