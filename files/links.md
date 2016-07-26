@@ -13,10 +13,11 @@ Required Attributes	| Description
 ----------			| -------------		
 `person_id`			| Corresponds to `person_id` field in `dyno-demand`-formatted demand
 `p-trip_id`			| Corresponds to `p-trip_id` in `dyno-demand`-formatted [`trip_list.txt`](https://github.com/osplanning-data-standards/dyno-demand/blob/master/files/trip_list.md).  Unique within the household/person. 
+`link_num`			| The integer link/path segment number representing the order that this link takes place in the entire path
 `A_id`				| Starting node for link / path segment.  Can be a `stop_id` corresponding to [`stops.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stops.md) or a `taz` corresponding to an access link such as [`walk_access_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/walk_access_ft.md)
 `B_id`				| Ending node for link / path segment. Can be a `stop_id` corresponding to [`stops.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stops.md) or a `taz` corresponding to an access link such as [`walk_access_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/walk_access_ft.md)
 `mode`          	| Supply mode for the link, corresponds to `mode` in `GTFS-PLUS`-formatted [`routes_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md) or an access or egress mode.
-`linkmode`			| One of: 
+`link_mode`			| One of: 
 -					|    access
 -					|    egress
 -					|    transfer
