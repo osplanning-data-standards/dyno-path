@@ -17,13 +17,9 @@ Required Attributes	| Description
 `A_id`				| Starting node for link / path segment.  Can be a `stop_id` corresponding to [`stops.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stops.md) or a `taz` corresponding to an access link such as [`walk_access_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/walk_access_ft.md)
 `B_id`				| Ending node for link / path segment. Can be a `stop_id` corresponding to [`stops.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stops.md) or a `taz` corresponding to an access link such as [`walk_access_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/walk_access_ft.md)
 `mode`          	| Supply mode for the link, corresponds to `mode` in `GTFS-PLUS`-formatted [`routes_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md) or an access or egress mode.
-`link_mode`			| One of: 
--					|    access
--					|    egress
--					|    transfer
--					|    transit
-`trip_id`			| Transit trip ID for the trip, corresponding to `trip_id` in `GTFS-PLUS`-formatted [`trips.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/trips.md)
-`route_id`			| Transit route short name corresponding to `route_id` variables in GTFS-PLUS-formatted [`route_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md)
+`link_mode`			| One of:  [ access \| egress \| transfer \| transit ] |
+`trip_id` | Transit trip ID for the trip, corresponding to `trip_id` in `GTFS-PLUS`-formatted [`trips.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/trips.md)
+`route_id` | Transit route short name corresponding to `route_id` variables in GTFS-PLUS-formatted [`route_ft.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/routes_ft.md)
 
 File MAY contain the following attributes:
 
@@ -40,10 +36,7 @@ Optional Attributes	| Description
 `B_seq` 			| Stop sequence for the ending node of the link, corresponding to `stop_sequence` in `GTFS-PLUS`-formatted [`stop_times.txt`](https://github.com/osplanning-data-standards/GTFS-PLUS/blob/master/files/stop_times.md)
 `sim_cost` 			| Generalized cost calculated in the assignment/simulation.
 `missed_xfer` 		| 1 if the transfer is missed. (This happens if `new_waittime` is negative.)
-`chosen` 			| Chosen status for path. 
-- 					| 	-1 if not chosen by passenger
-- 					| 	-2 if chosen but passenger rejected because of capacity or timing issues
-- 					| 	otherwise: <iteration>+<simulation>\_<iteration>/100.
+`chosen` 			| Chosen status for path. <br>-1 if not chosen by passenger<br>-2 if chosen but passenger rejected because of capacity or timing issues<br>otherwise: <iteration>+<simulation>\_<iteration>/100.
 `overcap`			| Number of passengers overcap for the transit vehicle for this link.
 `overcap_frac` 		| Fraction of attempted boards that are overcapacity at this stop.
 `iteration` 		| Iteration corresponding to this pathset.
